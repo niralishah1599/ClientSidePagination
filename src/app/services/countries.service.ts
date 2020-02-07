@@ -19,7 +19,7 @@ export class CountriesService
           name: 'France',
           flag: 'c/c3/Flag_of_France.svg',
           area: 64,
-          population: 649
+          population: 6
         },
         {
           id:3,
@@ -119,9 +119,32 @@ export class CountriesService
         })
       }
 
+      
+
        countries() :ICountry[]
        {
         console.log(this.CountryList);
        return  this.CountryList;
+      }
+
+
+      sort(key,order)
+      {
+        if(order=='decending')
+        {
+         this.CountryList.sort((a,b)=>{
+        console.log(a);
+        return  (a[key]).toString().toUpperCase()>(b[key]).toString().toUpperCase() ?1:-1;
+      });
+    }
+    else
+    {
+      if(order=='ascending'){
+      this.CountryList.sort((a,b)=>{
+        console.log(a);
+        return  (a[key]).toString().toUpperCase()<(b[key]).toString().toUpperCase() ?1:-1;
+      });
+    }
+    }
       }
 }

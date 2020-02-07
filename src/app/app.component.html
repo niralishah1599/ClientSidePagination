@@ -4,9 +4,9 @@
   <tr>
     <th scope="col">id</th>
     <th scope="col" >Country <i (click)="sortBy('name')" [ngClass]="sortclass.name"></i></th>
-    {{sortclass.name}}
   
-    <!--<th scope="col" >Area <i (click)="sortBy('area')" [ngClass]="sortclass.area"></i></th>-->
+  
+    <th scope="col" >Area <i (click)="sortBy('area')" [ngClass]="sortclass.area"></i></th>
     
     <th scope="col">Population <i (click)="sortBy('population')" [ngClass]="sortclass.population"></i></th>
   </tr>
@@ -30,8 +30,7 @@
   <pagination
    [totalItems]="collectionSize" 
    [(ngModel)]="page"
-    (click)="onPageClick(page)"
-  >
+    (click)="onPageClick()">
   </pagination>
 
  
